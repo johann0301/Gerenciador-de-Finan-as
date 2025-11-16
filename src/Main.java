@@ -1,4 +1,4 @@
-// Arquivo: Main.java (Versão Refatorada)
+// Arquivo: Main.java (Inalterado)
 
 /*
  * A classe Main agora tem UMA ÚNICA responsabilidade:
@@ -14,7 +14,6 @@ public class Main {
         // 2. Chama o método 'iniciar()' desse objeto
         minhaInterface.iniciar();
 
-        // E é só isso! O método 'iniciar()' agora tem
-        // o loop 'while' e controla o resto do programa.
+        // E é só isso!
     }
 }

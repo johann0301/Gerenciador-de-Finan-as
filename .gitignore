@@ -30,3 +30,5 @@ bin/
 .DS_Store
 
 financas.json
+configuracao.json
+dados_usuarios.json
