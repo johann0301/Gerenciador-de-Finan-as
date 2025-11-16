@@ -29,6 +29,10 @@ bin/
 ### Mac OS ###
 .DS_Store
 
+# Meus JSONs sensíveis
 financas.json
 configuracao.json
-dados_usuarios.json
+dados_usuario.json
+
+# Regra coringa para ignorar TODOS os backups de finanças
+financas_backup_*.json
