@@ -1,3 +1,5 @@
+package modelo;
+
 /**
  * Nova classe para armazenar transações recorrentes (Feature 11).
  */

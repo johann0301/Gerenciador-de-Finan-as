@@ -1,10 +1,14 @@
-// Arquivo: GerenciadorFinanceiro.java (Corrigido)
+package logica;// Arquivo: logica.GerenciadorFinanceiro.java (Corrigido)
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 // Import para checagem de JSON nulo
 import com.google.gson.stream.JsonToken;
+
+import modelo.Transacao;
+import modelo.TransacaoRecorrente;
+import modelo.Configuracao;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -532,6 +536,18 @@ public class GerenciadorFinanceiro {
         this.transacoesRecorrentes.add(tr);
         salvarRecorrentes();
         System.out.println("Transação recorrente adicionada!");
+    }
+
+    /**
+     * Retorna a lista completa de transações para a interface gráfica.
+     */
+    public List<Transacao> getListaDeTransacoes() {
+        // Retorna a lista de transações.
+        // Se a lista estiver vazia, retorna uma lista vazia em vez de null.
+        if (this.transacoes == null) {
+            return new ArrayList<>();
+        }
+        return this.transacoes;
     }
 
     // Este método deve ser chamado pela Interface após o login

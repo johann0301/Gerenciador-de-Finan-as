@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.HistoricoController">
+   <children>
+      <TableView fx:id="tabelaHistorico" prefHeight="400.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="colunaData" prefWidth="122.39996337890625" text="Data" />
+          <TableColumn fx:id="colunaDescricao" prefWidth="174.4000244140625" text="Descrição" />
+            <TableColumn fx:id="colunaValor" prefWidth="101.5999755859375" text="Valor" />
+            <TableColumn fx:id="colunaTipo" prefWidth="86.39996337890625" text="Tipo" />
+            <TableColumn fx:id="colunaCategoria" prefWidth="124.00006103515625" text="Categoria" />
+        </columns>
+      </TableView>
+      <Button layoutX="709.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleRemoverSelecionado" text="Remover Selecionado" />
+      <Button layoutX="709.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleEditarSelecionado" text="Editar Selecionado" />
+   </children>
+</AnchorPane>

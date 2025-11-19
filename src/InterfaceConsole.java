@@ -1,5 +1,9 @@
 
 // Arquivo: InterfaceConsole.java (Atualizado)
+import logica.GerenciadorFinanceiro;
+import modelo.Transacao;
+import modelo.TransacaoRecorrente;
+
 import java.util.List;
 import java.util.Scanner;
 // Imports adicionados

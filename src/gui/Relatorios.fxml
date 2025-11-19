@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.RelatoriosController">
+   <children>
+      <HBox alignment="CENTER" layoutX="1.0" prefHeight="90.0" prefWidth="600.0" spacing="40.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleRelatorioCategoria" text="Gastos por Categoria" />
+            <Button mnemonicParsing="false" onAction="#handleRelatorioBalanco" text="Balanço do Mês" />
+            <Button mnemonicParsing="false" onAction="#handleRelatorioMaiorDespesa" text="Maior Despesa" />
+            <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#handleRelatorioMedia" text="Média Diária" />
+         </children>
+      </HBox>
+      <TextArea fx:id="areaDeRelatorio" editable="false" layoutY="89.0" prefHeight="310.0" prefWidth="600.0" />
+   </children>
+</AnchorPane>

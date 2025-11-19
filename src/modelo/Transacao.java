@@ -1,3 +1,5 @@
+package modelo;
+
 public class Transacao {
 
     private double valor;
@@ -6,7 +8,7 @@ public class Transacao {
     private String data; // Usaremos String (texto) "dd/MM/yyyy"
     private String descricao;
 
-    // Construtor: Usado para criar um novo objeto Transacao
+    // Construtor: Usado para criar um novo objeto modelo.Transacao
     public Transacao(double valor, String tipo, String categoria, String data, String descricao) {
         this.valor = valor;
         this.tipo = tipo;
