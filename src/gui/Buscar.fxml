@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.BuscarController">
+<VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.BuscarController" stylesheets="@style.css">
     <children>
-        <Label text="Buscar Transações">
+        <Label text="Buscar Transações" styleClass="header-label">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
@@ -21,7 +21,7 @@
         <TextField fx:id="campoDataInicio" maxWidth="300.0" promptText="(dd/MM/yyyy) Data Início" />
         <TextField fx:id="campoDataFim" maxWidth="300.0" promptText="(dd/MM/yyyy) Data Fim" />
 
-        <Button mnemonicParsing="false" onAction="#handleBuscar" text="Buscar" />
+        <Button mnemonicParsing="false" onAction="#handleBuscar" text="Buscar" styleClass="button, primary" />
 
         <TableView fx:id="tabelaResultados" VBox.vgrow="ALWAYS">
             <columns>
