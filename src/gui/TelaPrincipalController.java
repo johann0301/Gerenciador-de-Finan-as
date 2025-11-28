@@ -2,6 +2,7 @@ package gui;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import logica.GerenciadorFinanceiro;
@@ -52,12 +53,16 @@ public class TelaPrincipalController {
     protected void handleMenuAdicionarReceita() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AdicionarTransacao.fxml"));
-            AnchorPane subPagina = loader.load();
+            Node subPagina = loader.load();
 
             AdicionarTransacaoController controller = loader.getController();
-            controller.setTelaPrincipalController(this); // <-- Passa a referência
+            controller.setTelaPrincipalController(this);
             controller.setTipoTransacao("RECEITA");
 
+            // NOVO: Define o título da página
+            controller.setTituloPagina("Adicionar Receita");
+
+            setAnchor(subPagina);
             areaDeConteudo.getChildren().setAll(subPagina);
         } catch (IOException e) {
             e.printStackTrace();
@@ -68,12 +73,16 @@ public class TelaPrincipalController {
     protected void handleMenuAdicionarDespesa() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AdicionarTransacao.fxml"));
-            AnchorPane subPagina = loader.load();
+            Node subPagina = loader.load();
 
             AdicionarTransacaoController controller = loader.getController();
-            controller.setTelaPrincipalController(this); // <-- Passa a referência
+            controller.setTelaPrincipalController(this);
             controller.setTipoTransacao("DESPESA");
 
+            // NOVO: Define o título da página
+            controller.setTituloPagina("Adicionar Despesa");
+
+            setAnchor(subPagina);
             areaDeConteudo.getChildren().setAll(subPagina);
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,13 +96,14 @@ public class TelaPrincipalController {
             // --- MUDANÇA IMPORTANTE AQUI ---
             // Tivemos que mudar para o FXMLLoader para pegar o controller
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Historico.fxml"));
-            AnchorPane subPagina = loader.load();
+            Node subPagina = loader.load();
 
             // Pega o controller do Historico
             HistoricoController controller = loader.getController();
             // Passa a referência da tela principal para ele
             controller.setTelaPrincipalController(this);
 
+            setAnchor(subPagina);
             areaDeConteudo.getChildren().setAll(subPagina);
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,8 +114,6 @@ public class TelaPrincipalController {
     // porque agora todos os carregamentos precisam pegar o controller.
 
     // --- Métodos "Stub" (Vazios) para o resto do menu ---
-
-
 
     @FXML
     protected void handleMenuBuscarTransacoes() {
@@ -124,12 +132,13 @@ public class TelaPrincipalController {
         System.out.println("Botão 'Orçamento' clicado.");
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Orcamento.fxml"));
-            AnchorPane subPagina = loader.load();
+            Node subPagina = loader.load();
 
             // Pega o controller e passa a referência da tela principal
             OrcamentoController controller = loader.getController();
             controller.setTelaPrincipalController(this);
 
+            setAnchor(subPagina);
             areaDeConteudo.getChildren().setAll(subPagina);
         } catch (IOException e) {
             e.printStackTrace();
@@ -154,19 +163,12 @@ public class TelaPrincipalController {
         carregarSubPagina("Backup.fxml");
     }
 
-    // COLE ESTE MÉTODO DENTRO DA SUA CLASSE TelaPrincipalController
-
-    /**
-     * Método genérico para carregar sub-páginas que (por enquanto)
-     * não precisam de lógica especial ou passagem de parâmetros.
-     * * @param fxmlNome O nome do arquivo FXML (ex: "Buscar.fxml")
-     */
     private void carregarSubPagina(String fxmlNome) {
         try {
-            // Carrega o FXML da sub-página
-            AnchorPane subPagina = FXMLLoader.load(getClass().getResource(fxmlNome));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlNome));
+            Node subPagina = loader.load();
 
-            // Limpa a área de conteúdo e adiciona a nova sub-página
+            setAnchor(subPagina);
             areaDeConteudo.getChildren().setAll(subPagina);
 
         } catch (IOException e) {
@@ -174,5 +176,12 @@ public class TelaPrincipalController {
             System.out.println("Erro: Não foi possível carregar a sub-página: " + fxmlNome);
             // (Aqui você pode mostrar um Alert de erro)
         }
+    }
+
+    private void setAnchor(Node node) {
+        AnchorPane.setTopAnchor(node, 0.0);
+        AnchorPane.setBottomAnchor(node, 0.0);
+        AnchorPane.setLeftAnchor(node, 0.0);
+        AnchorPane.setRightAnchor(node, 0.0);
     }
 }

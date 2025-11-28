@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import logica.GerenciadorFinanceiro;
 import modelo.Transacao;
+import javafx.scene.control.Label;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -16,6 +17,9 @@ public class AdicionarTransacaoController {
 
     @FXML
     private TextField campoValor;
+
+    @FXML
+    private Label labelTitulo;
 
     private String tipoTransacao;
     private GerenciadorFinanceiro gerenciador = MainApp.gerenciador;
@@ -93,5 +97,8 @@ public class AdicionarTransacaoController {
         alert.setHeaderText("Não foi possível completar a ação");
         alert.setContentText(mensagem);
         alert.showAndWait();
+    }
+    public void setTituloPagina(String titulo) {
+        this.labelTitulo.setText(titulo);
     }
 }
